@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--label 中直接包裹 input,可以实现绑定-->
+    <label>点击此处文本，用户名输入框会获取焦点
+        <br>
+        用户名： <input type="text" maxlength="15">
+    </label>
+    <hr/>
+
+    <!-- 使用 label的for属性绑定input -->
+    <label for="#two">点击此处文本，密码输入框会获取焦点</label>
+    <br/>
+    用户名： <input type="text" />
+    密码： <input type="password" id="#two"/>
+</body>
+</html>

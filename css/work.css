@@ -1,0 +1,43 @@
+.header{
+    height: 48px;
+    background-color: dimgrey;
+}
+.headerRight a, select{
+    font-size: 15px;
+    line-height: 48px;
+    width: 87px;
+    padding-right: 20px;
+}
+.headerTwo{
+    height: 100px;
+    background-color: aqua;
+}
+
+.goodChart{
+    float: right;
+    border: 1px #bfb9b9 solid;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 30px;
+    background-color: #f5efef;
+}
+.search{
+    float: left;
+    width: 400px;
+    height: 30px;
+    background-color: #f5efef;
+    border: 1px #bfb9b9 solid;
+    margin-top: 30px;
+    margin-left: 90px;
+}
+
+.navigation{
+    list-style: none;
+    padding-inline-start: 0px;
+    margin-block-start: 0px;
+}
+.navigation li{
+    border: 1px #bfb9b9 solid;
+}

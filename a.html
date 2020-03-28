@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        a {
-            text-decoration: none;
+        #c1 {
+            position: fixed;
+            background-color: #bfb9b9;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9;
+        }
+        #c2 {
+            position: fixed;
+            background-color: #ece9e9;
+            top: 50%;
+            left: 50%;
+            margin-top: -200px;
+            margin-left: -200px;
+            width: 400px;
+            height: 400px;
+            z-index: 10;
+            opacity: 0;
         }
     </style>
 </head>
-<body>
-    <a href="https://www.baiud.com">百度一下</a>
+<body style="margin: 0">
+    <div style="background-color: #903d3d; height: 1000px;"></div>
+    <div id="c1"></div>
+    <div id="c2"></div>
 </body>
 </html>

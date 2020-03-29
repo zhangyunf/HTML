@@ -3,17 +3,191 @@
 > 文档对象模型(DOM)：描述处理网页内容的方法和接口
 > 浏览器对象模型(BOM): 描述与浏览器进行交互的方法和接口
 # 核心（ECMAScript）
-## 1.输出
+## 1.存在形式
+* 1.1 Script代码块只能在当前页面使用
+* 1.2 独立js文件，可以引入
+```angular2html
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //内部编写JS代码的地方
+    </script>
+    <!--外部路径引入JS-->
+    <script type="text/javascript" src="js路径"></script>
+
+</body>
+```
+## 2.变量
+```angular2html
+<script type="text/javascript">
+        //全局变量
+        na = '张三';
+        function func() {
+            //局部变量
+            var age = 18;
+            //全局变量
+            a = 20;
+        }
+    </script>
+```
+## 2.输出
 * 1.1 console.log()
 * 1.2 window.alert()
 * 1.3 document.write()
 * 1.4 innerHTML()
-## 2.数据类型
+## 3.数据类型
 * 2.1 字符串
+> 常用方法
+
+方法|描述
+---|---
+name[0]|索引
+length|长度
+trim()|去除空白
+charAt(index)|根据索引获取字符
+subString(start,end)|根据索引获取子序列
+split()|分割
+```angular2html
+<body>
+    <div id="d1">HTML标签和样式</div>
+    <script>
+        setInterval(function () {
+            var element = document.getElementById("d1");
+            var text = element.innerText;
+            var lastText = text.charAt(text.length-1);
+            var preString = text.substring(0, text.length - 1);
+            element.innerText = lastText + preString;
+        }, 1000);
+    </script>
+</body>
+```
 * 2.2 数字
+
+方法|描述
+---|---
+isNaN()|确定某个值是否是个数
+infinity()|计算数时超出最大可能数范围时返回的值
+Number()|返回数字，由其参数转换而来。
+parseFloat()|解析其参数并返回浮点数。
+parseInt()|解析其参数并返回整数。
+
 * 2.3 数组
+> 初始化
+```javascript
+var names = ["张三", "李四"];
+var names = Array("张三", "李四");
+```
+>常见方法
+
+方法|描述
+---|---
+names[0]|索引
+push()|尾部追加
+pop()|尾部删除
+unshift()|头部增加
+shift()|头部删除
+splice(index, 0, ele)|指定位置插入元素
+splice(index, 1, ele)|指定位置替换元素
+splice(index, 1)|指定位置删除元素
+slice(start, end)|切片
+reverse()|翻转
+join()|将元素连接起来构建一个字符串
+concat()|连接数组
+sort()|排序
+
 * 2.4 日期
-## 3.
+* 2.5 布尔
+```javascript
+var status = true;
+var status = false;
+```
+* 2.6 字典
+> 声明
+```javascript
+var info = {
+    name: "张三",
+    age: 18
+}
+```
+> 常用方法
+
+方法|描述
+---|---
+info["name"]| 获取
+info["age"] = 20|修改
+info["sex"] = "女"|增加
+delete info["sex"]| 删除
+```angular2html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table th, table td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+        }
+        table th {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label>
+            <input type="button" onclick="func()" value="添加一个人员"/>
+        </label>
+
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+            </tr>
+        </thead>
+        <tbody id="body"></tbody>
+        <script type="text/javascript">
+            var userList = [
+                {id:1, name:"张三", sex:"男"},
+                {id:2, name:"翠花", sex:"女"},
+                {id:3, name:"李四", sex:"男"}
+            ]
+            count = 0;
+            function func() {
+                var element = document.getElementById("body");
+                if (count < userList.length) {
+                    var user = userList[count];
+                    var trNode = document.createElement("tr");
+                    for (var key in user) {
+                        var tdNode = document.createElement("td");
+                        tdNode.innerText = user[key];
+                        trNode.appendChild(tdNode);
+                    }
+                    element.appendChild(trNode);
+                    count++;
+                }else {
+                    window.alert("没有人员了");
+                }
+
+            }
+        </script>
+
+    </table>
+</body>
+</html>
+```
+## 
+* 1.1 ==和===区别
+> '=='只比对值、'==='需要类型和值同时相等
 # 文档对象模型(DOM)
 ## 1.DOM节点
 * 1.1 属性
